@@ -12,6 +12,9 @@ from .utils import get_current_weather
 
 # Create your views here.
 
-def location_weather(request, latitude, longitute):
+def location_weather(request):
+    latitude = request.GET.get('latitude')
+    longitute = request.GET.get('longitute')
 
+    #todo validation
     return JsonResponse(get_current_weather(latitude, longitute))

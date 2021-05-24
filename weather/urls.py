@@ -9,5 +9,5 @@ urlpatterns = [
     #     views.location_weather,
     #     name='location-weather'
     # )
-    path('location/<str:latitude>/<str:longitute>/', views.location_weather)
+    path('location', views.location_weather)
 ]
