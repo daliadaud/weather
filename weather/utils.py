@@ -19,7 +19,7 @@ def get_current_weather(latitute, long):
 
 
 def request_weather(latitute, long):
-    weather_url = WEATHER_API_BASE.format(lat=latitute, long=long)
+    weather_url = WEATHER_API_BASE.format(lat=float(latitute), long=float(long))
     try:
         r = requests.get(weather_url)
         r.raise_for_status()
