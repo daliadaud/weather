@@ -8,13 +8,21 @@ from django.http import (
     HttpResponse,
     JsonResponse
 )
-from .utils import get_current_weather
+from .utils import get_my_cities_weather, get_forecast
+from .consts import CITIES_INFO, DEFAULT_CITY
 
 # Create your views here.
 
-def location_weather(request):
-    latitude = request.GET.get('lat')
-    longitute = request.GET.get('long')
+def current_weather(request):
+    cities = request.GET.getlist('city', [DEFAULT_CITY])
+    data = get_my_cities_weather(cities)
+    print(data)
+    return render(request, 'weather/index.html', {"weather": data})
 
-    #todo validation
-    return JsonResponse(get_current_weather(latitude, longitute))
+
+def forecast_weather(request):
+    city = request.GET.get('city', [DEFAULT_CITY])
+    print("getting forecast **********")
+    data = get_forecast(city)
+    return render(request, 'weather/forecast.html', {"weather": data})
+

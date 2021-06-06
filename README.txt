@@ -1,5 +1,4 @@
-Extra Ideas
+Additional Todo/Ideas:
 
-1. Able to enter or select location, this would automatically translate location to longitude and latitude which will be used to call .../weather/location/<latitude>/<longitude>
-2. Besides getting current temperature , we can also have api/or combine with 2 days or weekly data
-3. Other info besides temperature, such as wind speed, humidity etc
+1. get geolocation
+2. set selected cities in cookies and call backend with stored cities, if not set, display dropdown 
