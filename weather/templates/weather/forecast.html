@@ -13,16 +13,16 @@
             <h1>Forecast Weather</h1>
             <p>5 Days weather for {{weather.city.name}}.</p>
         </div>
-        {% for list in weather.list %}
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+        <div class="row align-items-start">
+            {% for list in weather.list %}
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="card p-4">
                     <div class="d-flex">
                         <h6 class="flex-grow-1">{{weather.city.name}}</h6>
                         <h6>{{list.dt_txt}}</h6>
                     </div>
                     <div class="d-flex flex-column temp mt-5 mb-3">
-                        <h1 class="mb-0 font-weight-bold" id="heading">{{list.main.temp}} </h1> <span class="small grey">{{list.weather.0.main}}</span>
+                        <h1 class="mb-0 font-weight-bold" id="heading">{{list.main.temp}} °C</h1> <span class="small grey">{{list.weather.0.main}}</span>
                     </div>
                     <div class="d-flex">
                         <div class="temp-details flex-grow-1">
@@ -32,8 +32,8 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </body>
 
